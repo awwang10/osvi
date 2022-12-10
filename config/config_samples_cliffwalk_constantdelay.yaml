@@ -1,0 +1,47 @@
+############ Environment ############
+env: "cliffwalk"   # garnet / maze33 / cliffwalk
+discount: 0.9
+
+## garnet
+garnet_problem_num_states:  36
+garnet_problem_num_actions:  6
+garnet_problem_branching_factor:  12
+garnet_problem_non_zero_rewards: 12
+garnet_mdp_seed: 0
+
+## maze33
+maze33_success_prob: 0.9
+
+## cliffwalk
+cliffwalk_success_prob: 0.9
+
+############ Experiments ############
+
+## Exp PE Samples
+exp_pe_sample_num_iterations: 10000
+exp_pe_sample_alphas: [0, 0.1, 0.5, 0.8, 1]
+exp_pe_sample_model_type: LocallySmoothed # LocallySmoothed
+
+exp_pe_lr_type: "ConstantAndDelay" #RescaledLinear, ConstantAndDelay
+exp_pe_td_learning_pe_lr: 0.2
+exp_pe_td_gamma: 0.999
+exp_pe_td_learning_pe_delay: 10000
+
+exp_pe_osdyna_lr: [0.05, 0.05, 0.05, 0.05, 0.05]
+exp_pe_osdyna_gamma: [0.995, 0.995, 0.995, 0.995, 0.995]
+exp_pe_osdyna_lr_delay: 10000
+
+
+## Exp Control Samples
+exp_control_sample_num_iterations: 80000
+exp_control_sample_alphas: [0, 0.1, 0.5, 0.8, 1]
+exp_control_sample_model_type: LocallySmoothed # LocallySmoothed
+
+exp_control_lr_type: "ConstantAndDelay" #RescaledLinear, ConstantAndDelay
+exp_control_qlearning_lr: 0.02
+exp_control_qlearning_delay: 68000
+exp_control_qlearning_gamma: 0.9999
+
+exp_control_osdyna_lr: [0.02, 0.02, 0.02, 0.02, 0.02]
+exp_control_osdyna_delays: [30000, 35000, 50000, 48000, 80000]
+exp_control_osdyna_gamma: [0.9, 0.9, 0.9995, 0.9995, 0.9995]

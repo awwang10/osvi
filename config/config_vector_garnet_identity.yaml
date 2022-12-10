@@ -1,0 +1,25 @@
+############ Environment ############
+env: "garnet"   # garnet / maze33 / cliffwalk
+discount: 0.99
+
+## garnet
+garnet_problem_num_states:  50
+garnet_problem_num_actions:  4
+garnet_problem_branching_factor:  3
+garnet_problem_non_zero_rewards: 5
+garnet_mdp_seed: 0
+garnet_instances: 100
+
+############ Experiments ############
+
+## Exp PE Exact
+exp_pe_exact_num_iterations: 100
+exp_pe_exact_alphas: [0, 0.1, 0.5, 0.8, 1]
+exp_pe_exact_alphas_sensitivity: 0.02
+exp_pe_exact_model_type: IdentitySmoothed # LocallySmoothed, IdentitySmoothed
+
+## Exp Control Exact
+exp_control_exact_num_iterations: 20
+exp_control_exact_alphas: [0, 0.1, 0.5, 0.8, 1]
+exp_control_exact_alphas_sensitivity: 0.02
+exp_control_exact_model_type: IdentitySmoothed # LocallySmoothed, IdentitySmoothed
